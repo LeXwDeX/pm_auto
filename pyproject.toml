@@ -32,8 +32,8 @@ dependencies = [
 packages = ["pm_auto"]
 
 [project.urls]
-"Homepage" = "https://github.com/sunfounder/pm_auto"
-"Bug Tracker" = "https://github.com/sunfounder/pm_auto/issues"
+"Homepage" = "https://github.com/LeXwDeX/pm_auto"
+"Bug Tracker" = "https://github.com/LeXwDeX/pm_auto/issues"
 
 [tool.setuptools.dynamic]
 version = {attr = "pm_auto.__version__"}
