@@ -22,6 +22,8 @@
 # SSD1306_128_64  128x64 pixel display
 
 from __future__ import division
+from __future__ import division
+import time
 from PIL import Image, ImageDraw, ImageFont
 from importlib.resources import files as resource_files
 
