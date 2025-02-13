@@ -21,7 +21,7 @@ python3 -m venv venv
 pip3 install build
 
 # Clone the repository
-git clone https://github.com/sunfounder/pm_auto.git
+https://github.com/LeXwDeX/pm_auto.git
 # Activate the virtual environment
 source venv/bin/activate
 # build the package
