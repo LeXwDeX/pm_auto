@@ -18,7 +18,8 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-
+#
+# SSD1306_128_64  128x64 pixel display
 
 from __future__ import division
 from PIL import Image, ImageDraw, ImageFont
@@ -326,9 +327,23 @@ class OLED():
     def display(self):
         image = self.image.rotate(self.rotation)
         self.oled.image(image)
-        # save image to file for debug
-        # image.save('/tmp/oled.png')
         self.oled.display()
+
+    def display_gif(self, gif_path, duration=0.1):
+        """
+        Display a GIF on the OLED screen frame by frame.
+
+        Args:
+            gif_path (str): Path to the GIF file.
+            duration (float): Duration to display each frame in seconds.
+        """
+        from PIL import ImageSequence
+        gif = Image.open(gif_path)
+        for frame in ImageSequence.Iterator(gif):
+            frame = frame.convert("1").resize((self.width, self.height))
+            self.oled.image(frame)
+            self.oled.display()
+            time.sleep(duration)
 
     def off(self):
         self.oled.off()
